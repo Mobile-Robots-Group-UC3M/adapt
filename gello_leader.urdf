@@ -1,0 +1,125 @@
+<?xml version="1.0" ?>
+<!-- ===================================================================== -->
+<!--  GELLO leader arm (un brazo). Para gravity compensation con Pinocchio. -->
+<!--                                                                         -->
+<!--  PESOS: reales, medidos/estimados por Laura (parte impresa + motor).    -->
+<!--  DISTANCIAS: provisionales = UR3 x 0.5.  <<< CONFIRMAR CON REGLA >>>     -->
+<!--                                                                         -->
+<!--  Para gravity comp solo importan: masa (mass) y centro de masa (origin  -->
+<!--  del inertial). La matriz <inertia> casi no influye -> valores pequeños -->
+<!--  de relleno, no hace falta afinarlos.                                   -->
+<!-- ===================================================================== -->
+<robot name="gello_leader">
+
+  <!-- base: fija al mundo, no genera peso sobre las juntas -->
+  <link name="base_link">
+    <inertial>
+      <mass value="0.050"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0" iyy="1e-5" iyz="0" izz="1e-5"/>
+    </inertial>
+  </link>
+
+  <!-- ===== JUNTA 1: shoulder_pan (gira en vertical) ===== -->
+  <joint name="shoulder_pan_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="shoulder_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.44"/>   <!-- UR3: 0.1519 -> CONFIRMAR -->
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-3.1416" upper="3.1416" velocity="3.0"/>
+  </joint>
+  <!-- L1 (23 g) + motor 1 (18 g) = 41 g -->
+  <link name="shoulder_link">
+    <inertial>
+      <mass value="0.041"/>
+      <origin rpy="0 0 0" xyz="0 0.030 0"/>
+      <inertia ixx="3e-5" ixy="0" ixz="0" iyy="3e-5" iyz="0" izz="3e-5"/>
+    </inertial>
+  </link>
+
+  <!-- ===== JUNTA 2: shoulder_lift (levanta el brazo) ===== -->
+  <joint name="shoulder_lift_joint" type="revolute">
+    <parent link="shoulder_link"/>
+    <child link="upper_arm_link"/>
+    <origin rpy="0 1.5708 0" xyz="0 0.045 0"/>  <!-- UR3: 0.1198 -> CONFIRMAR -->
+    <axis xyz="0 1 0"/>
+    <limit effort="5" lower="-3.1416" upper="3.1416" velocity="3.0"/>
+  </joint>
+  <!-- L2 (45 g) + motor 2 (18 g) = 63 g.  Brazo superior: el que mas pesa en el calculo -->
+  <link name="upper_arm_link">
+    <inertial>
+      <mass value="0.063"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0609"/>   <!-- ~mitad del largo del brazo superior -->
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="3e-5"/>
+    </inertial>
+  </link>
+
+  <!-- ===== JUNTA 3: elbow (codo) ===== -->
+  <joint name="elbow_joint" type="revolute">
+    <parent link="upper_arm_link"/>
+    <child link="forearm_link"/>
+    <origin rpy="0 0 0" xyz="0 -0.025 0.135"/>  <!-- UR3: -0.0925, 0.24365 -> CONFIRMAR -->
+    <axis xyz="0 1 0"/>
+    <limit effort="5" lower="-3.1416" upper="3.1416" velocity="3.0"/>
+  </joint>
+  <!-- L3 (47 g) + motor 3 (18 g) = 65 g -->
+  <link name="forearm_link">
+    <inertial>
+      <mass value="0.065"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0533"/>   <!-- ~mitad del largo del antebrazo -->
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="3e-5"/>
+    </inertial>
+  </link>
+
+  <!-- ===== JUNTA 4: wrist_1 ===== -->
+  <joint name="wrist_1_joint" type="revolute">
+    <parent link="forearm_link"/>
+    <child link="wrist_1_link"/>
+    <origin rpy="0 1.5708 0" xyz="0 0 0.105"/>  <!-- UR3: 0.21325 -> CONFIRMAR -->
+    <axis xyz="0 1 0"/>
+    <limit effort="5" lower="-3.1416" upper="3.1416" velocity="3.0"/>
+  </joint>
+  <!-- L4 (16 g) + motor 4 (18 g) = 34 g -->
+  <link name="wrist_1_link">
+    <inertial>
+      <mass value="0.034"/>
+      <origin rpy="0 0 0" xyz="0 0.0213 0"/>
+      <inertia ixx="2e-5" ixy="0" ixz="0" iyy="2e-5" iyz="0" izz="2e-5"/>
+    </inertial>
+  </link>
+
+  <!-- ===== JUNTA 5: wrist_2 ===== -->
+  <joint name="wrist_2_joint" type="revolute">
+    <parent link="wrist_1_link"/>
+    <child link="wrist_2_link"/>
+    <origin rpy="0 0 0" xyz="0 0.04 0"/>  <!-- UR3: 0.08505 -> CONFIRMAR -->
+    <axis xyz="0 0 1"/>
+    <limit effort="5" lower="-3.1416" upper="3.1416" velocity="3.0"/>
+  </joint>
+  <!-- L5 (12 g) + motor 5 (18 g) = 30 g -->
+  <link name="wrist_2_link">
+    <inertial>
+      <mass value="0.030"/>
+      <origin rpy="0 0 0" xyz="0 0 0.0213"/>
+      <inertia ixx="2e-5" ixy="0" ixz="0" iyy="2e-5" iyz="0" izz="2e-5"/>
+    </inertial>
+  </link>
+
+  <!-- ===== JUNTA 6: wrist_3 ===== -->
+  <joint name="wrist_3_joint" type="revolute">
+    <parent link="wrist_2_link"/>
+    <child link="wrist_3_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.03"/>  <!-- UR3: 0.08535 -> CONFIRMAR -->
+    <axis xyz="0 1 0"/>
+    <limit effort="5" lower="-3.1416" upper="3.1416" velocity="3.0"/>
+  </joint>
+  <!-- gripper (30 g) + trigger (8 g) + motor 6 (18 g) + motor gripper (18 g) = 74 g -->
+  <link name="wrist_3_link">
+    <inertial>
+      <mass value="0.074"/>
+      <origin rpy="0 0 0" xyz="0 0.0205 0"/>
+      <inertia ixx="4e-5" ixy="0" ixz="0" iyy="4e-5" iyz="0" izz="4e-5"/>
+    </inertial>
+  </link>
+
+</robot>
