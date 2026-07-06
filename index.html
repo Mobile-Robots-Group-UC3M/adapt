@@ -356,22 +356,66 @@
 
 
     <!-- Teaser video (now below abstract) -->
-    <section class="hero teaser">
+    <!--section class="hero teaser">
       <div class="container is-max-desktop">
         <div class="hero-body">
-          <!-- TODO: Replace with your teaser video -->
           <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-            <!-- TODO: Add your video file path here -->
             <source src="static/videos/iros2026_video.mp4" type="video/mp4">
           </video>
-          <!-- TODO: Replace with your video description -->
           <h2 class="subtitle has-text-centered">
             Example video showing the workflow proposed in the paper for defining the reduced volumetric mesh which allows real-time force-based inverse kinematics for a robotic soft neck. 
           </h2>
         </div>
       </div>
-    </section>
+    </section-->
     <!-- End teaser video -->
+    
+      <!-- General Overview Section -->
+      <section class="section">
+        <div class="container is-max-desktop">
+          <h2 class="title is-2 has-text-centered">General Overview of the Method</h2>
+          
+          <div class="columns is-centered">
+            <div class="column is-full has-text-centered">
+              <figure class="image">
+                <img src="static/images/GeneralScheme.png" alt="ADAPT General Scheme Workflow" style="max-width:100%; height:auto;" />
+                <figcaption class="is-size-7 mt-2">Figure 1. ADAPT overview: Teleoperation trajectories are validated via a digital twin and safeguarded in real time.</figcaption>
+              </figure>
+            </div>
+          </div>
+      
+          <div class="content mt-5">
+            <p>
+              <strong>ADAPT</strong> (<em>ADAM Dual-Arm Platform for Teleoperation</em>) is a comprehensive hardware and software framework designed to democratize and secure the collection of high-quality dual-arm data through <strong>Learning from Demonstration (LfD)</strong>. 
+            </p>
+            <p>
+              Based on the low-cost philosophy of <strong>GELLO</strong>, our method solves the three major challenges of dual-arm teleoperation: prohibitive costs, operator fatigue, and the constant risk of self-collisions. The workflow is divided into three real-time interconnected pillars:
+            </p>
+      
+            <h3 class="title is-4">1. Dual-Arm Leader Device (Capture & Interface)</h3>
+            <ul>
+              <li><strong>Low-Cost Kinematic Replica:</strong> The operator interacts with 3D-printed master arms, specifically customized and adapted to the kinematics of the robot's UR3 arms.</li>
+              <li><strong>Active Weight Compensation:</strong> The device features a dynamic smart clutch mechanism that counteracts the physical discrepancies between the leader and the follower, eliminating user fatigue and ensuring kinematic fidelity.</li>
+            </ul>
+      
+            <h3 class="title is-4">2. ADAMSim (The Digital Twin & Safety Core)</h3>
+            <ul>
+              <li><strong>Sim-to-Real Bridge:</strong> Before reaching the physical environment, raw movement commands are processed by our custom simulation environment.</li>
+              <li><strong>Active Safety via SDF:</strong> We implement an algorithm based on <strong>Signed Distance Fields (SDFs)</strong> that evaluates joint states in real-time. If it detects a collision risk, it generates a virtual haptic repulsion force that halts the dangerous movement without restricting the operator's unconstrained workspace.</li>
+            </ul>
+      
+            <h3 class="title is-4">3. ADAM (Physical Follower - Safe Execution)</h3>
+            <ul>
+              <li><strong>Validated Trajectories:</strong> The physical robot receives exclusively commands that are strictly verified and completely collision-free.</li>
+              <li><strong>Risk-Free Demonstrations:</strong> Thanks to this real-time filtering, even operators with no prior experience can perform complex coordinated tasks and record massive datasets without the danger of causing catastrophic hardware damage.</li>
+            </ul>
+      
+            <blockquote>
+              <strong>In short:</strong> ADAPT acts as a smart teleoperation shield. It translates the user's natural movements, validates them in a digital twin using SDF to prevent self-collisions, and executes 100% safe trajectories on the real robot.
+            </blockquote>
+          </div>
+        </div>
+      </section>
 
       <!-- Experimental Results Section -->
       <section class="section">
