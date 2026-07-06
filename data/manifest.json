@@ -1,0 +1,122 @@
+{
+  "version": 2,
+  "active_study": "graph_search",
+  "active_experiment": "graph_a050_b050",
+  "studies": {
+    "graph_search": {
+      "label": "Graph Search Parameters",
+      "description": "Sweep alpha_G and beta_G with fixed sampling parameters.",
+      "fixed_params": {
+        "push_ratio": 0.2,
+        "push_alpha": 0.5,
+        "push_beta": 0.8
+      },
+      "experiments": [
+        {
+          "id": "graph_demo_a090_b010",
+          "label": "Demo available (alpha_G=0.90, beta_G=0.10)",
+          "cloud": "data/web_cloud_MOR_dij_a0p900_b0p100_20260321_152739.json",
+          "trajectories": "data/web_trajectories_MOR_dij_a0p900_b0p100_20260321_152739.json",
+          "params": {
+            "alpha_g": 0.9,
+            "beta_g": 0.1
+          }
+        },
+        {
+          "id": "graph_a050_b050",
+          "label": "alpha_G=0.50, beta_G=0.50",
+          "cloud": "data/web_cloud_MOR_dij_a0p500_b0p500_20260321_172626.json",
+          "trajectories": "data/web_trajectories_MOR_dij_a0p500_b0p500_20260321_172626.json",
+          "params": {
+            "alpha_g": 0.5,
+            "beta_g": 0.5
+          }
+        },
+        {
+          "id": "graph_a070_b030",
+          "label": "alpha_G=0.70, beta_G=0.30",
+          "cloud": "data/web_cloud_MOR_dij_a0p700_b0p300_20260321_172835.json",
+          "trajectories": "data/web_trajectories_MOR_dij_a0p700_b0p300_20260321_172835.json",
+          "params": {
+            "alpha_g": 0.7,
+            "beta_g": 0.3
+          }
+        },
+        {
+          "id": "graph_a030_b070",
+          "label": "alpha_G=0.30, beta_G=0.70",
+          "cloud": "data/web_cloud_MOR_dij_a0p300_b0p700_20260321_173005.json",
+          "trajectories": "data/web_trajectories_MOR_dij_a0p300_b0p700_20260321_173005.json",
+          "params": {
+            "alpha_g": 0.3,
+            "beta_g": 0.7
+          }
+        },
+        {
+          "id": "graph_a010_b090",
+          "label": "alpha_G=0.10, beta_G=0.90",
+          "cloud": "data/web_cloud_MOR_dij_a0p100_b0p900_20260321_182737.json",
+          "trajectories": "data/web_trajectories_MOR_dij_a0p100_b0p900_20260321_182737.json",
+          "params": {
+            "alpha_g": 0.1,
+            "beta_g": 0.9
+          }
+        }
+      ]
+    },
+    "adaptive_sampling": {
+      "label": "Adaptive Sampling (fixed alpha_G=0.50, beta_G=0.50)",
+      "description": "Keep graph weights fixed and vary sampling strategy parameters.",
+      "fixed_params": {
+        "alpha_g": 0.5,
+        "beta_g": 0.5
+      },
+      "experiments": [
+        {
+          "id": "sampling_push_ratio_010",
+          "label": "Low Push Ratio (0.10)",
+          "cloud": "data/web_cloud_MOR_dij_push_ratio_01.json",
+          "trajectories": "data/web_trajectories_MOR_dij_push_ratio_01.json",
+          "params": {
+            "push_ratio": 0.1,
+            "push_alpha": 0.5,
+            "push_beta": 0.8
+          }
+        },
+        {
+          "id": "sampling_push_ratio_090",
+          "label": "High Push Ratio (0.90)",
+          "cloud": "data/web_cloud_MOR_dij_push_ratio_09.json",
+          "trajectories": "data/web_trajectories_MOR_dij_push_ratio_09.json",
+          "params": {
+            "push_ratio": 0.9,
+            "push_alpha": 0.5,
+            "push_beta": 0.8
+          }
+        },
+        {
+          "id": "sampling_push_alpha_010",
+          "label": "Low Push Shift (alpha=0.10)",
+          "cloud": "data/web_cloud_MOR_dij_2_1_8.json",
+          "trajectories": "data/web_trajectories_MOR_dij_2_1_8.json",
+          "params": {
+            "push_ratio": 0.2,
+            "push_alpha": 0.1,
+            "push_beta": 0.8
+          }
+        },
+        {
+          "id": "sampling_push_alpha_080_beta_010",
+          "label": "Strong Shift + Narrow Spread (alpha=0.80, beta=0.10)",
+          "cloud": "data/web_cloud_MOR_dij_2_8_1.json",
+          "trajectories": "data/web_trajectories_MOR_dij_2_8_1.json",
+          "params": {
+            "push_ratio": 0.2,
+            "push_alpha": 0.8,
+            "push_beta": 0.1
+          }
+        }
+      ]
+    }
+  }
+}
