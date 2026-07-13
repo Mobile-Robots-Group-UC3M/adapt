@@ -516,47 +516,62 @@
 
       <section class="section planner-plots-section">
         <div class="container is-max-desktop">
-          <h2 class="title is-2 has-text-centered">Online Graph-Guided Optimization with Adaptive Sampling</h2>
-          <p class="has-text-centered planner-plots-subtitle">
-            This section is organized in two experiment groups: graph search tuning and adaptive sampling tuning.
-          </p>
+          <h2 class="title is-2 has-text-centered">Videos Demonstrations for Manipulation Tasks</h2>
           <p class="has-text-centered planner-plots-note">
-            Expected behavior: larger <code>alpha_G</code> tends to favor geometric progress to the goal, while larger <code>beta_G</code> increases force-awareness in path selection.
-            In adaptive sampling, <code>push_ratio</code> controls how many momentum-biased candidates are generated, <code>push_alpha</code> controls the shift magnitude, and <code>push_beta</code> controls local spread.
+            To evaluate the ADAPT framework, the experimental setup encompassed a diverse spectrum of dual-arm coordination paradigms. 
+            Tasks were designed to exploit true dual-arm synergy, solving operations that are impossible or inefficient for a single arm. 
+            The evaluation scenarios fall into 4 categories:
           </p>
 
           <div class="columns is-multiline planner-study-grid">
-            <div class="column is-half">
+            <div class="column is-one-quarter">
               <article class="planner-study-card">
-                <h3 class="title is-5">1) Graph Parameters</h3>
+                <h3 class="title is-5">1) Independent Simultaneous Tasks</h3>
                 <p>
-                  We vary <strong>alpha_G</strong> and <strong>beta_G</strong> to analyze how the graph cost balance affects path selection.
-                </p>
-                <p>
-                  Fixed sampling setup for this study: <code>push_ratio=0.20</code>, <code>push_alpha=0.50</code>, <code>push_beta=0.80</code>.
+                  A concurrent pick-and-place scenario where each arm independently relocates separate items. 
+                  This demonstrates spatial synergy, relying on the system's collision avoidance to maximize productivity in a shared workspace.
                 </p>
               </article>
             </div>
-            <div class="column is-half">
+            <div class="column is-one-quarter">
               <article class="planner-study-card">
-                <h3 class="title is-5">2) Adaptive Sampling</h3>
+                <h3 class="title is-5">2) Dual-Arm Coordination and Support-Action</h3>
                 <p>
-                  We keep graph weights fixed at <strong>alpha_G=0.50</strong> and <strong>beta_G=0.50</strong>, and vary sampling parameters.
+                  Involving handover and liquid pouring tasks. These represent a leader-follower dynamic where one arm provides stability (e.g., holding a glass)
+                  while the other executes a precision action (e.g., pouring).
                 </p>
+                
+              </article>
+            </div>
+            <div class="column is-one-quarter">
+              <article class="planner-study-card">
+                <h3 class="title is-5">3) Coupled Coordinated Manipulation</h3>
                 <p>
-                  Parameters swept in this block: <code>push_ratio</code>, <code>push_alpha</code>, and <code>push_beta</code>.
+                  Transporting large, rigid objects like bulky boxes. This requires synchronous control over a single payload, ensuring both manipulators maintain precise trajectory coordination 
+                  to prevent dropping the object or inducing mechanical strain.
                 </p>
+                
+              </article>
+            </div>
+            <div class="column is-one-quarter">
+              <article class="planner-study-card">
+                <h3 class="title is-5">4) Deformable Object Manipulation</h3>
+                <p>
+                  Handling flexible materials like cables and textiles. These objects deform under gravity and require simultaneous dual-point tension control, 
+                  highlighting a core advantage of dual-arm teleoperation.
+                </p>
+                
               </article>
             </div>
           </div>
 
           <div class="planner-experiment-controls">
             <div class="planner-control">
-              <label for="planner-study-select">Study Group</label>
+              <label for="planner-study-select">Dual-Arm Task</label>
               <select id="planner-study-select" class="planner-select"></select>
             </div>
             <div class="planner-control">
-              <label for="planner-experiment-select">Experiment</label>
+              <label for="planner-experiment-select">User</label>
               <select id="planner-experiment-select" class="planner-select"></select>
             </div>
           </div>
@@ -566,32 +581,32 @@
           </div>
           <p id="planner-plots-status" class="has-text-centered planner-plots-status">Loading plots...</p>
 
-          <div class="columns is-multiline">
+          <!--div class="columns is-multiline">
             <div class="column is-half">
               <article class="planner-plot-card">
-                <!-- <h3 class="title is-5 planner-plot-title">3D Cost Cloud + Replay Path</h3> -->
+                
                 <div id="plot-cost-cloud" class="planner-plot-canvas" aria-label="3D cost cloud plot"></div>
               </article>
             </div>
             <div class="column is-half">
               <article class="planner-plot-card">
-                <!-- <h3 class="title is-5 planner-plot-title">Cost Graph Force</h3> -->
+                
                 <div id="plot-force-cloud" class="planner-plot-canvas" aria-label="3D force cloud plot"></div>
               </article>
             </div>
             <div class="column is-half">
               <article class="planner-plot-card">
-                <!-- <h3 class="title is-5 planner-plot-title">Control Inputs</h3> -->
+               
                 <div id="plot-controls" class="planner-plot-canvas" aria-label="Control input plot"></div>
               </article>
             </div>
             <div class="column is-half">
               <article class="planner-plot-card">
-                <!-- <h3 class="title is-5 planner-plot-title">Control Velocities</h3> -->
+                
                 <div id="plot-velocities" class="planner-plot-canvas" aria-label="Control velocity plot"></div>
               </article>
             </div>
-          </div>
+          </div-->
         </div>
       </section>
       <!-- Previous Work Section (moved from Experimental Results) -->
