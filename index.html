@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- MathJax for LaTeX equation rendering -->
     <script>
     window.MathJax = {
       tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
@@ -13,28 +12,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <!-- Primary Meta Tags -->
-  <!-- TODO: Replace with your paper title and author names -->
   <meta name="title" content="ADAPT: A Safe Dual-Arm Teleoperation Framework for Data Collection on ADAM">
   <meta name="description" content="Dual-arm teleoperation system for ADAM robot.">
-  <!-- TODO: Add 5-10 relevant keywords for your research area -->
   <meta name="keywords" content="Teleoperation, Dual-Arm manipulation, Learning from Demonstration">
-  <!-- TODO: List all authors -->
   <meta name="author" content="Laura Pons, Adrian Prados, Alberto Mendez, Gonzalo Espinoza, Ramon Barber">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
   
-  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
   <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
   <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
   <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
   <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -45,21 +34,14 @@
   <meta property="article:tag" content="KEYWORD1">
   <meta property="article:tag" content="KEYWORD2">
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
   <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
   <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
   <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
   <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
 
-  <!-- Academic/Research Specific -->
   <meta name="citation_title" content="PAPER_TITLE">
   <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
   <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
@@ -67,13 +49,11 @@
   <meta name="citation_conference_title" content="CONFERENCE_NAME">
   <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
   
-  <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
-  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
@@ -81,23 +61,18 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 
-  <!-- TODO: Replace with your paper title and authors -->
   <title>ADAPT: A Safe Dual-Arm Teleoperation Framework for Data Collection on ADAM</title>
   
-  <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/LogoADAMSim.ico">
   <link rel="apple-touch-icon" href="static/images/LogoADAMSim.ico">
   
-  <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
   
-  <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
-  <!-- Fallback for browsers that don't support preload -->
   <noscript>
     
     <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -105,10 +80,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -118,7 +91,6 @@
   <script defer src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
   <script defer src="static/js/index.js"></script>
   
-  <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -172,7 +144,6 @@
   }
   </script>
   
-  <!-- Website/Organization Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -190,12 +161,10 @@
 <body>
 
 
-  <!-- Scroll to Top Button -->
   <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- More Works Dropdown -->
   <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
@@ -210,19 +179,14 @@
         </button>
       </div>
       <div class="works-list">
-        <!-- TODO: Replace with your lab's related works -->
         <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank">
           <div class="work-info">
-            <!-- TODO: Replace with actual paper title -->
             <h5>Paper Title 1</h5>
-            <!-- TODO: Replace with brief description -->
             <p>Brief description of the work and its main contribution.</p>
-            <!-- TODO: Replace with venue and year -->
             <span class="work-venue">Conference/Journal 2024</span>
           </div>
           <i class="fas fa-external-link-alt"></i>
         </a>
-        <!-- TODO: Add more related works or remove extra items -->
         <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
           <div class="work-info">
             <h5>Paper Title 2</h5>
@@ -250,10 +214,8 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <!-- TODO: Replace with your paper title -->
               <h1 class="title is-1 publication-title">ADAPT: A Safe Dual-Arm Teleoperation Framework for Data Collection on ADAM</h1>
               <div class="is-size-5 publication-authors">
-                <!-- TODO: Replace with your paper authors and their personal links -->
                 <span class="author-block">
                   <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Laura Pons</a><sup>*</sup>,</span>
                   <span class="author-block">
@@ -268,16 +230,13 @@
                     </div>
 
                     <div class="is-size-5 publication-authors">
-                      <!-- TODO: Replace with your institution and conference/journal info -->
                       <span class="author-block">Mobile Robots Group, RoboticsLab, University Carlos III<br>ROBOT 2026</span>
-                      <!-- TODO: Remove this line if no equal contribution -->
                       <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                     </div>
 
                     <div class="column has-text-centered">
                       <div class="publication-links">
-                           <!-- TODO: Update with your arXiv paper ID -->
-                        <span class="link-block">
+                           <span class="link-block">
                           <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                           class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
@@ -287,19 +246,7 @@
                         </a>
                       </span>
 
-                      <!-- TODO: Add your supplementary material PDF or remove this section -->
-                      <!--span class="link-block">
-                        <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Supplementary</span>
-                      </a>
-                    </span-->
-
-                    <!-- TODO: Replace with your GitHub repository URL -->
-                    <span class="link-block">
+                      <span class="link-block">
                       <a href="https://github.com/Mobile-Robots-Group-UC3M/adapt" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -309,26 +256,14 @@
                     </a>
                   </span>
 
-                  <!-- TODO: Update with your arXiv paper ID -->
-                  <!--span class="link-block">
-                    <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>arXiv</span>
-                  </a>
-                </span-->
-              </div>
+                  </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Paper abstract (moved above video) -->
-      <!-- Image above abstract -->
-      <div class="container is-max-desktop">
+    <div class="container is-max-desktop">
         <div class="columns is-centered has-text-centered">
           <div class="column is-four-fifths">
             <img src="static/images/IntroPaper.jpg" alt="Abstract illustration" style="max-width: 100%; height: auto; margin-top: 2rem; margin-bottom: 2rem;" />
@@ -341,37 +276,18 @@
             <div class="column is-four-fifths">
               <h2 class="title is-3">Abstract</h2>
               <div class="content has-text-justified">
-                <!-- TODO: Replace with your paper abstract -->
                 <p>
                   To successfully train robotic systems through Learning from Demonstrations, large and high-quality datasets of human demonstrations are normally required. However, dual-arm data collection is severely bottlenecked by prohibitive hardware costs, complex dual-arm coordination, and a persistent risk of self-collisions, which restricts the deployment of these platforms. In this work, we present ADAPT (ADAM Dual-Arm Platform for Teleoperation), a comprehensive hardware and software framework based on GELLO that enables safe, intuitive, and low-cost data collection for the ADAM mobile manipulator. The proposed system incorporates an active weight compensation mechanism to bridge the physical discrepancies between the leader device and the robot, alongside an active safety system based on Signed Distance Fields that prevents self-collisions without restricting the operator's workspace. The framework has been evaluated in both simulated environments and on the real ADAM platform, demonstrating that inexperienced users can safely collect complex dual-arm demonstrations.
                 </p>
               </div>
-              <!-- New image under abstract -->
-            
-            </div>
+              </div>
           </div>
         </div>
       </section>
 
 
 
-    <!-- Teaser video (now below abstract) -->
-    <!--section class="hero teaser">
-      <div class="container is-max-desktop">
-        <div class="hero-body">
-          <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-            <source src="static/videos/iros2026_video.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            Example video showing the workflow proposed in the paper for defining the reduced volumetric mesh which allows real-time force-based inverse kinematics for a robotic soft neck. 
-          </h2>
-        </div>
-      </div>
-    </section-->
-    <!-- End teaser video -->
-    
-      <!-- General Overview Section -->
-      <section class="section">
+    <section class="section">
         <div class="container is-max-desktop">
           <h2 class="title is-2 has-text-centered">General Overview of the Method</h2>
           
@@ -416,103 +332,6 @@
           </div>
         </div>
       </section>
-
-      <!-- Experimental Results Section -->
-      <!--section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-2 has-text-centered">Experimental Results</h2>
-          <div class="content">
-            <h3 class="title is-4">Volumetric Mesh Refinement</h3>
-            <p>
-              The volumetric mesh refinement process was performed by selecting a large mesh density set, ranging from 0 tetrahedra to 90000 tetrahedra, and testing the simulation performance when applying a sinusoidal input to the cable displacement controller. The relationship betweeen the studied parameters and the number of tetrahedra is displayed in the following figure: 
-            </p>
-            <div class="columns is-multiline is-centered">
-
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/Frontal_Amplitude_Displacement_vs_Tetrahedros.png" alt="Displacement vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
-                  <figcaption>(a) Displacement vs Tetrahedral Elements</figcaption>
-                </figure>
-              </div>
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/Frontal_Amplitude_Force_vs_Tetrahedros.png" alt="Force vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
-                  <figcaption>(b) Force vs Tetrahedral Elements</figcaption>
-                </figure>
-              </div>
-
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/Frontal_Amplitude_Roll_vs_Tetrahedros.png" alt="Roll vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
-                  <figcaption>(c) Roll vs Tetrahedral Elements</figcaption>
-                </figure>
-              </div>
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/Frontal_Amplitude_Pitch_vs_Tetrahedros.png" alt="Pitch vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
-                  <figcaption>(d) Pitch vs Tetrahedral Elements</figcaption>
-                </figure>
-              </div>
-
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/Frontal_Amplitude_Yaw_vs_Tetrahedros.png" alt="Yaw vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
-                  <figcaption>(e) Yaw vs Tetrahedral Elements</figcaption>
-                </figure>
-              </div>
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/Frontal_realTime_vs_Tetrahedros.png" alt="Time vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
-                  <figcaption>(f) Real Time vs Tetrahedral Elements</figcaption>
-                </figure>
-              </div>
-            <p>
-              After studying the results obtained we analyized a smaller subset of elements within the first third of the curve, meaning they were running at a reasonable frame rate to perform real time or quasi-real time control. The following figure table the results obtained for the subset of elements between 0 and 40000 tetrahedra:
-            </p>
-            <div class="columns is-centered">
-              <div class="column is-half has-text-centered">
-                <figure>
-                  <img src="static/images/table.png" alt="Table of mesh refinement results" style="max-width:120%; height:auto;" />
-                  <figcaption>Table: Results for mesh refinement subset (0–40000 tetrahedra).</figcaption>
-                              </figure>
-                            </div>
-                          </div>
-
-                          <div class="columns is-centered">
-                            <div class="column is-one-quarter has-text-centered">
-                              <figure>
-                                <img src="static/images/default.png" alt="Subfigure 1" style="max-width:100%; height:auto;" />
-                                <figcaption>(a) 2363 tetrahedra</figcaption>
-                              </figure>
-                            </div>
-                            <div class="column is-one-quarter has-text-centered">
-                              <figure>
-                                <img src="static/images/9676.png" alt="Subfigure 2" style="max-width:100%; height:auto;" />
-                                <figcaption>(b) 9676 tetrahedra</figcaption>
-                              </figure>
-                            </div>
-                            <div class="column is-one-quarter has-text-centered">
-                              <figure>
-                                <img src="static/images/17k.png" alt="Subfigure 3" style="max-width:100%; height:auto;" />
-                                <figcaption>(c) 17633 tetrahedra</figcaption>
-                              </figure>
-                            </div>
-                            <div class="column is-one-quarter has-text-centered">
-                              <figure>
-                                <img src="static/images/37k.png" alt="Subfigure 4" style="max-width:100%; height:auto;" />
-                                <figcaption>(d) 37308 tetrahedra</figcaption>
-                              </figure>
-                            </div>
-                          </div>
-                </figure>
-              </div>
-            </div>
-
-            <p>
-            </p>
-          </div>
-        </div>
-      </section-->
 
       <section class="section planner-plots-section">
         <div class="container is-max-desktop">
@@ -568,10 +387,10 @@
           <div class="planner-experiment-controls columns is-centered mt-4">
             <div class="column is-narrow">
               <div class="field">
-                <label class="label" for="planner-study-select">Dual-Arm Task</label>
+                <label class="label" for="video-task-select">Dual-Arm Task</label>
                 <div class="control">
                   <div class="select">
-                    <select id="planner-study-select">
+                    <select id="video-task-select">
                       <option value="" disabled selected>Select a Task...</option>
                       <option value="Pick_and_Place">Pick and Place</option>
                       <option value="Pouring_Water">Pouring Water</option>
@@ -586,10 +405,10 @@
 
             <div class="column is-narrow">
               <div class="field">
-                <label class="label" for="planner-experiment-select">User</label>
+                <label class="label" for="video-user-select">User</label>
                 <div class="control">
                   <div class="select">
-                    <select id="planner-experiment-select">
+                    <select id="video-user-select">
                       <option value="" disabled selected>Select User...</option>
                       <option value="user1">User 1</option>
                       <option value="user2">User 2</option>
@@ -615,86 +434,16 @@
             </div>
           </div>
 
-          <!--div class="columns is-multiline">
-            <div class="column is-half">
-              <article class="planner-plot-card">
-                
-                <div id="plot-cost-cloud" class="planner-plot-canvas" aria-label="3D cost cloud plot"></div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="planner-plot-card">
-                
-                <div id="plot-force-cloud" class="planner-plot-canvas" aria-label="3D force cloud plot"></div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="planner-plot-card">
-               
-                <div id="plot-controls" class="planner-plot-canvas" aria-label="Control input plot"></div>
-              </article>
-            </div>
-            <div class="column is-half">
-              <article class="planner-plot-card">
-                
-                <div id="plot-velocities" class="planner-plot-canvas" aria-label="Control velocity plot"></div>
-              </article>
-            </div>
-          </div-->
-        </div>
-      </section>
-      <!-- Previous Work Section (moved from Experimental Results) -->
-      <!--section class="section">
-        <div class="container is-max-desktop">
-          <h2 class="title is-2 has-text-centered">Previous Work</h2>
-          <div class="content">
-            <h3 class="title is-4">Mechanical Characterization of the Neck</h3>
-            <p>
-              The mechanical characterization of the soft robotic neck was performed using an Instron 34SC-1 Universal Testing Machine (UTM). Frontal tendon pulling tests were performed for several displacements (20 mm, 40 mm and 60 mm) at various rates (2.5 mm/s, 5 mm/s, 10 mm/s and 15 mm/s) for a total of 10 loading-unloading cycles. The following figure shows the experimental setup and the results obtained from the tests. 
-            </p>
-            <div class="columns is-centered">
-              <div class="column is-full has-text-centered">
-                <figure>
-                  <img src="static/images/UTM_tests_horizontal_2.png" alt="Mechanical Characterization of the Neck" style="max-width:100%; height:auto;" />
-                  <figcaption>Figure: Mechanical characterization setup and results for the soft robotic neck. (a) Visual representation of the test performed. (b) Mechanical response of the neck at the three target displacements for the least quasi-static condition. (c) Median value for the equilibrium curve (average of the loading and unloading paths). (d) Hysteresis loop percentage of the mechanical response at the different displacements and rates.</figcaption>
-                </figure>
-              </div>
-            </div>
-            <p>
-              The material response of the system shows a mostly lineal behavior when analyzing the equilibrium curve, which leds to use a lineal elastic model or the more complete Neo-Hookean hyperelastic constitutive model. Using a Sequential Model-Based Optimization (SMBO) strategy within the Optuna library, we calibrated the parameters of the SOFA digital twin to fit the experimental data, obtaining a good match between the simulated and experimental responses for the Neo-Hookean model. The optimization was carried out using this cost function: <span class="math-inline">\( f_c = \alpha \cdot \mathrm{error}_{\mathrm{force}} + \beta \cdot \mathrm{error}_{\theta} \)</span>, where $\alpha$ and $\beta$ are the weights assigned to the cable–force error and pitch–angle error, respectively. Pitch was weighted more strongly ($\alpha = 0.3$, $\beta = 1$) because angular measurements are less affected by cable friction and boundary effects than force readings, and therefore provide a more reliable indication of the global mechanical response. 
-            </p>
-
-            <p>
-              From the results obtained on the equilibrium curve at a displacement rate of 15 mm/s, we obtained a median Young's Modulus <span class="math-inline">$E = 2.3\ \mathrm{MPa}$</span> and a Poisson's ratio of <span class="math-inline">$\nu = 0.43$</span> for the Neo-Hookean model, which are consistent with values reported in the literature for similar thermoplastic polyurethane filaments.
-            </p>
           </div>
-        </div>
-      </section-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <footer class="footer">
+      </section>
+      <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
@@ -705,11 +454,5 @@
   </div>
 </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
+</body>
   </html>

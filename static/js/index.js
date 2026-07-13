@@ -752,27 +752,27 @@ function buildLineLayout(title, yLabel) {
 
 // --- NUEVO CÓDIGO PARA EL REPRODUCTOR DE VIDEO ---
 function setupVideoPlayer() {
-    const taskSelect = document.getElementById('planner-study-select');
-    const userSelect = document.getElementById('planner-experiment-select');
+    // Usamos los nuevos IDs para que las gráficas de Plotly no los borren
+    const taskSelect = document.getElementById('video-task-select');
+    const userSelect = document.getElementById('video-user-select');
     const videoElement = document.getElementById('experiment-video');
     const videoSource = document.getElementById('video-source');
     const summaryText = document.getElementById('summary-text');
 
-    // Si no estamos en la página con el reproductor, salimos
     if (!taskSelect || !userSelect || !videoElement) return;
 
-    // Diccionario de videos (¡Asegúrate de que estas rutas existan en tu carpeta static/videos/!)
+    // Diccionario con las claves corregidas para que coincidan con el HTML
     const videoDatabase = {
         'Pick_and_Place_user1': 'static/videos/User_1.mp4',
         'Pick_and_Place_user2': 'static/videos/User_2.mp4',
         'Pick_and_Place_user3': 'static/videos/User_3.mp4',
         'Pick_and_Place_user4': 'static/videos/User_4.mp4',
-        'Pouring_Water_USer1': 'static/videos/Agua.MOV',
-        'Pouring_Water_USer2': 'static/videos/Agua_2.mp4',
+        'Pouring_Water_user1': 'static/videos/Agua.MOV', 
+        'Pouring_Water_user2': 'static/videos/Agua_2.mp4', 
         'Box_user1': 'static/videos/Agua_2.mp4',
         'bimanual_user1': 'static/videos/Bianual_adiran.mp4',
         'bimanual_user2': 'static/videos/Bimanual_Laura.mp4',
-        'Handover_Sphere': 'static/videos/Pelota.MOV'
+        'Handover_user1': 'static/videos/Pelota.MOV'
     };
 
     function updateVideo() {
