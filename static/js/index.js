@@ -752,7 +752,6 @@ function buildLineLayout(title, yLabel) {
 
 // --- NUEVO CÓDIGO PARA EL REPRODUCTOR DE VIDEO ---
 function setupVideoPlayer() {
-    // Usamos los nuevos IDs para que las gráficas de Plotly no los borren
     const taskSelect = document.getElementById('video-task-select');
     const userSelect = document.getElementById('video-user-select');
     const videoElement = document.getElementById('experiment-video');
@@ -761,7 +760,6 @@ function setupVideoPlayer() {
 
     if (!taskSelect || !userSelect || !videoElement) return;
 
-    // Diccionario con las claves corregidas para que coincidan con el HTML
     const videoDatabase = {
         'Pick_and_Place_user1': 'static/videos/User_1.mp4',
         'Pick_and_Place_user2': 'static/videos/User_2.mp4',
@@ -772,9 +770,45 @@ function setupVideoPlayer() {
         'Box_user1': 'static/videos/Agua_2.mp4',
         'bimanual_user1': 'static/videos/Bianual_adiran.mp4',
         'bimanual_user2': 'static/videos/Bimanual_Laura.mp4',
-        'Handover_user1': 'static/videos/Pelota.MOV'
+        'Handover_user1': 'static/videos/Pelota.MOV' 
     };
 
+    // 1. Actualiza el menú de usuarios basándose en la tarea seleccionada
+    function updateAvailableUsers() {
+        const selectedTask = taskSelect.value;
+        
+        // Limpiamos el menú de usuarios dejando solo la opción por defecto
+        userSelect.innerHTML = '<option value="" disabled selected>Select User...</option>';
+        
+        // Ocultamos el vídeo y reiniciamos el texto
+        videoElement.classList.add('is-hidden');
+        videoSource.src = '';
+        summaryText.innerHTML = "<em>Please select a user to load the demonstration video.</em>";
+        summaryText.className = 'is-italic has-text-grey mt-2 mb-4';
+
+        if (!selectedTask) return;
+
+        // Buscamos qué usuarios existen para esta tarea en concreto
+        const availableUsers = [];
+        for (const key in videoDatabase) {
+            if (key.startsWith(selectedTask + '_')) {
+                // Sacamos la parte del usuario (ej. quitamos "Box_" y nos queda "user1")
+                const userKey = key.replace(selectedTask + '_', '');
+                availableUsers.push(userKey);
+            }
+        }
+
+        // Creamos las etiquetas <option> dinámicamente y las añadimos
+        availableUsers.sort().forEach(userKey => {
+            const option = document.createElement('option');
+            option.value = userKey;
+            // Formateamos el texto para que se vea bien: "user1" -> "User 1"
+            option.textContent = userKey.replace('user', 'User ');
+            userSelect.appendChild(option);
+        });
+    }
+
+    // 2. Reproduce el vídeo cuando se selecciona al usuario
     function updateVideo() {
         const selectedTask = taskSelect.value;
         const selectedUser = userSelect.value;
@@ -787,19 +821,18 @@ function setupVideoPlayer() {
                 videoElement.classList.remove('is-hidden');
                 videoSource.src = videoPath;
                 videoElement.load();
-                videoElement.play().catch(e => console.log("Autoplay preventd:", e));
+                videoElement.play().catch(e => console.log("Autoplay prevented:", e));
 
                 summaryText.innerHTML = `Showing demonstration: <strong>${taskSelect.options[taskSelect.selectedIndex].text}</strong> by <strong>${userSelect.options[userSelect.selectedIndex].text}</strong>`;
-                summaryText.classList.remove('has-text-grey');
-                summaryText.classList.add('has-text-info');
-            } else {
-                summaryText.innerHTML = "<em>Video not found for this combination.</em>";
-                videoElement.classList.add('is-hidden');
+                summaryText.className = 'has-text-info mt-2 mb-4';
             }
         }
     }
 
-    taskSelect.addEventListener('change', updateVideo);
+    // Le decimos a "Task" que ejecute updateAvailableUsers al cambiar
+    taskSelect.addEventListener('change', updateAvailableUsers);
+    
+    // Le decimos a "User" que ejecute updateVideo al cambiar
     userSelect.addEventListener('change', updateVideo);
 }
 // -------------------------------------------------
