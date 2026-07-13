@@ -750,6 +750,60 @@ function buildLineLayout(title, yLabel) {
     };
 }
 
+// --- NUEVO CÓDIGO PARA EL REPRODUCTOR DE VIDEO ---
+function setupVideoPlayer() {
+    const taskSelect = document.getElementById('planner-study-select');
+    const userSelect = document.getElementById('planner-experiment-select');
+    const videoElement = document.getElementById('experiment-video');
+    const videoSource = document.getElementById('video-source');
+    const summaryText = document.getElementById('summary-text');
+
+    // Si no estamos en la página con el reproductor, salimos
+    if (!taskSelect || !userSelect || !videoElement) return;
+
+    // Diccionario de videos (¡Asegúrate de que estas rutas existan en tu carpeta static/videos/!)
+    const videoDatabase = {
+        'Pick_and_Place_user1': 'static/videos/User_1.mp4',
+        'Pick_and_Place_user2': 'static/videos/User_2.mp4',
+        'Pick_and_Place_user3': 'static/videos/User_3.mp4',
+        'Pick_and_Place_user4': 'static/videos/User_4.mp4',
+        'Pouring_Water_USer1': 'static/videos/Agua.MOV',
+        'Pouring_Water_USer2': 'static/videos/Agua_2.mp4',
+        'Box_user1': 'static/videos/Agua_2.mp4',
+        'bimanual_user1': 'static/videos/Bianual_adiran.mp4',
+        'bimanual_user2': 'static/videos/Bimanual_Laura.mp4',
+        'Handover_Sphere': 'static/videos/Pelota.MOV'
+    };
+
+    function updateVideo() {
+        const selectedTask = taskSelect.value;
+        const selectedUser = userSelect.value;
+
+        if (selectedTask && selectedUser) {
+            const combinationKey = `${selectedTask}_${selectedUser}`;
+            const videoPath = videoDatabase[combinationKey];
+
+            if (videoPath) {
+                videoElement.classList.remove('is-hidden');
+                videoSource.src = videoPath;
+                videoElement.load();
+                videoElement.play().catch(e => console.log("Autoplay preventd:", e));
+
+                summaryText.innerHTML = `Showing demonstration: <strong>${taskSelect.options[taskSelect.selectedIndex].text}</strong> by <strong>${userSelect.options[userSelect.selectedIndex].text}</strong>`;
+                summaryText.classList.remove('has-text-grey');
+                summaryText.classList.add('has-text-info');
+            } else {
+                summaryText.innerHTML = "<em>Video not found for this combination.</em>";
+                videoElement.classList.add('is-hidden');
+            }
+        }
+    }
+
+    taskSelect.addEventListener('change', updateVideo);
+    userSelect.addEventListener('change', updateVideo);
+}
+// -------------------------------------------------
+
 async function fetchJson(path, timeoutMs) {
     const timeout = typeof timeoutMs === 'number' ? timeoutMs : 12000;
     const pageUrl = new URL(window.location.href);
@@ -921,6 +975,9 @@ async function renderPlannerPlots() {
 function initPage() {
     // Render plots first so optional UI scripts cannot block this section.
     renderPlannerPlots();
+
+    // Iniciar la lógica de los videos interactivos
+    setupVideoPlayer();
 
     var options = {
 		slidesToScroll: 1,

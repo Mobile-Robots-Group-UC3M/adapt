@@ -418,7 +418,7 @@
       </section>
 
       <!-- Experimental Results Section -->
-      <section class="section">
+      <!--section class="section">
         <div class="container is-max-desktop">
           <h2 class="title is-2 has-text-centered">Experimental Results</h2>
           <div class="content">
@@ -427,7 +427,7 @@
               The volumetric mesh refinement process was performed by selecting a large mesh density set, ranging from 0 tetrahedra to 90000 tetrahedra, and testing the simulation performance when applying a sinusoidal input to the cable displacement controller. The relationship betweeen the studied parameters and the number of tetrahedra is displayed in the following figure: 
             </p>
             <div class="columns is-multiline is-centered">
-              <!-- First row: displacement, force -->
+
               <div class="column is-half has-text-centered">
                 <figure>
                   <img src="static/images/Frontal_Amplitude_Displacement_vs_Tetrahedros.png" alt="Displacement vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
@@ -440,7 +440,7 @@
                   <figcaption>(b) Force vs Tetrahedral Elements</figcaption>
                 </figure>
               </div>
-              <!-- Second row: roll, pitch -->
+
               <div class="column is-half has-text-centered">
                 <figure>
                   <img src="static/images/Frontal_Amplitude_Roll_vs_Tetrahedros.png" alt="Roll vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
@@ -453,7 +453,7 @@
                   <figcaption>(d) Pitch vs Tetrahedral Elements</figcaption>
                 </figure>
               </div>
-              <!-- Third row: yaw, time -->
+
               <div class="column is-half has-text-centered">
                 <figure>
                   <img src="static/images/Frontal_Amplitude_Yaw_vs_Tetrahedros.png" alt="Yaw vs Tetrahedral Elements" style="max-width:120%; height:auto;" />
@@ -477,7 +477,7 @@
                               </figure>
                             </div>
                           </div>
-                          <!-- Four subfigures in one row -->
+
                           <div class="columns is-centered">
                             <div class="column is-one-quarter has-text-centered">
                               <figure>
@@ -512,7 +512,7 @@
             </p>
           </div>
         </div>
-      </section>
+      </section-->
 
       <section class="section planner-plots-section">
         <div class="container is-max-desktop">
@@ -565,21 +565,55 @@
             </div>
           </div>
 
-          <div class="planner-experiment-controls">
-            <div class="planner-control">
-              <label for="planner-study-select">Dual-Arm Task</label>
-              <select id="planner-study-select" class="planner-select"></select>
+          <div class="planner-experiment-controls columns is-centered mt-4">
+            <div class="column is-narrow">
+              <div class="field">
+                <label class="label" for="planner-study-select">Dual-Arm Task</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="planner-study-select">
+                      <option value="" disabled selected>Select a Task...</option>
+                      <option value="Pick_and_Place">Pick and Place</option>
+                      <option value="Pouring_Water">Pouring Water</option>
+                      <option value="Box">Box Manipulation</option>
+                      <option value="bimanual">Bimanual Task</option>
+                      <option value="Handover">Handover Sphere</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="planner-control">
-              <label for="planner-experiment-select">User</label>
-              <select id="planner-experiment-select" class="planner-select"></select>
+
+            <div class="column is-narrow">
+              <div class="field">
+                <label class="label" for="planner-experiment-select">User</label>
+                <div class="control">
+                  <div class="select">
+                    <select id="planner-experiment-select">
+                      <option value="" disabled selected>Select User...</option>
+                      <option value="user1">User 1</option>
+                      <option value="user2">User 2</option>
+                      <option value="user3">User 3</option>
+                      <option value="user4">User 4</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div id="planner-experiment-summary" class="planner-experiment-summary" role="status" aria-live="polite">
-            <p class="planner-summary-empty">Select an experiment to load its JSON cloud and trajectory files.</p>
+          <div id="planner-experiment-summary" class="has-text-centered mt-2 mb-4" role="status" aria-live="polite">
+            <p id="summary-text" class="is-italic has-text-grey">Select a task and a user to load the demonstration video.</p>
           </div>
-          <p id="planner-plots-status" class="has-text-centered planner-plots-status">Loading plots...</p>
+
+          <div class="columns is-centered">
+            <div class="column is-eight-fifths has-text-centered">
+              <video id="experiment-video" class="is-hidden" width="100%" controls muted autoplay style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <source id="video-source" src="" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
 
           <!--div class="columns is-multiline">
             <div class="column is-half">
