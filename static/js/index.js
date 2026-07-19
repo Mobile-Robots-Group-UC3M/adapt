@@ -767,10 +767,11 @@ function setupVideoPlayer() {
         'Pick_and_Place_user4': 'static/videos/User_4.mp4',
         'Pouring_Water_user1': 'static/videos/Agua.MOV', 
         'Pouring_Water_user2': 'static/videos/Agua_2.mp4', 
-        'Box_user1': 'static/videos/Agua_2.mp4',
+        'Box_user1': 'static/videos/Caja.mp4',
         'bimanual_user1': 'static/videos/Bianual_adiran.mp4',
         'bimanual_user2': 'static/videos/Bimanual_Laura.mp4',
-        'Handover_user1': 'static/videos/Pelota.MOV' 
+        'Handover_user1': 'static/videos/Pelota.MOV',
+        'Deformable_user1': 'static/videos/Sudadera.mp4'
     };
 
     // 1. Actualiza el menú de usuarios basándose en la tarea seleccionada
