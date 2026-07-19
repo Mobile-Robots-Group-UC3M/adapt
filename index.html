@@ -475,6 +475,49 @@
     </section>
     <!-- END NEW SECTION -->
 
+    <!-- NEW SECTION: Simulated environments for data acquisition -->
+    <section class="section" id="sdf-safety">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2 has-text-centered">Simulated environments for data acquisition</h2>
+        
+        <div class="content mt-5 has-text-justified">
+          <p>
+            The ADAPT framework leverages high-fidelity simulated environments (based on ADAMSim) to streamline the data acquisition process for Imitation Learning. 
+            By utilizing a digital twin of the dual-arm setup, operators can perform complex teleoperation tasks in a safe and controlled virtual space. 
+            This approach not only prevents physical wear and accidental collisions during the initial stages of data collection, but also enables 
+            rapid iteration and the generation of diverse datasets across varied scenarios, ensuring robust policy training before real-world deployment.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered is-centered mt-5">
+          
+          <!-- Video Column  -->
+          <div class="column is-half has-text-centered">
+            <!-- Adjust the src path to match your actual SDF video -->
+            <video width="100%" controls muted autoplay loop style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              <source src="static/videos/demo-simulacion.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="is-size-7 mt-2">Teleoperation of the dual-arm system within the digital twin. The virtual environment replicates the physical kinematics and dynamics, 
+              allowing the operator to safely collect manipulation data without hardware risks.</p>
+          </div>
+
+          <!-- Image Column  -->
+          <div class="column is-half has-text-centered">
+            <figure class="image">
+              <!-- Adjust the src path to match your actual SDF image -->
+              <img src="static/images/VisionExample.png" alt="SDF Visualization in Digital Twin" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; height: auto;" />
+              <figcaption class="is-size-7 mt-2">The virtual workspace where objects and environmental constraints are accurately modeled. This digital twin serves as the primary 
+                platform for capturing high-quality human demonstrations and validating control policies prior to physical execution.</figcaption>
+            </figure>
+          </div>
+          
+        </div>
+        
+      </div>
+    </section>
+    <!-- END NEW SECTION -->
+
 
 
       <footer class="footer">
