@@ -433,6 +433,50 @@
 
           </div>
       </section>
+
+      <!-- NEW SECTION: Signed Distance Fields -->
+    <section class="section" id="sdf-safety">
+      <div class="container is-max-desktop">
+        <h2 class="title is-2 has-text-centered">Signed Distance Fields (SDF) for Active Safety</h2>
+        
+        <div class="content mt-5 has-text-justified">
+          <p>
+            The ADAPT framework incorporates an active safety system based on Signed Distance Fields (SDFs) to prevent self-collisions without restricting the operator's workspace.
+            By evaluating the robot's joint states in real-time within the digital twin, the SDF algorithm provides haptic repulsion that halts dangerous movements, guaranteeing risk-free data collection during unconstrained dual-arm teleoperation.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered is-centered mt-5">
+          <!-- Image Column -->
+          <div class="column is-half has-text-centered">
+            <figure class="image">
+              <!-- Adjust the src path to match your actual SDF image -->
+              <img src="static/images/SDFADAM.png" alt="SDF Visualization in Digital Twin" style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 100%; height: auto;" />
+              <figcaption class="is-size-7 mt-2">SDF calcualted for ADAM. (a) 2D SDF cross-section in the YZ plane. The heatmap indicates spatial distances, from the robot's surface (red, 0.00m) 
+                to free space (green), with contour lines marking specific proximity margins (0.02m to 0.08m), (b) Simulation of the robot interacting with objects on a 
+                table. An interactive point cloud on the arms evaluates collision risks: blue points indicate safe zones, while orange points highlight areas breaching 
+                the safety threshold near an object.</figcaption>
+            </figure>
+          </div>
+          
+          <!-- Video Column -->
+          <div class="column is-half has-text-centered">
+            <!-- Adjust the src path to match your actual SDF video -->
+            <video width="100%" controls muted autoplay loop style="border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+              <source src="static/videos/SDF_comprimido.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p class="is-size-7 mt-2">Real-time haptic repulsion preventing dual-arm self-collision and object collision. 
+              When the SDF detects the collision, the system blocks the arm to avoid real collision.</p>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    <!-- END NEW SECTION -->
+
+
+
       <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
